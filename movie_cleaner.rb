@@ -60,5 +60,4 @@ OptionParser.new do |opt|
          'The wanted resolutions in order (Default: 1080p,720p') { |o| options.resolutions = o }
 end.parse!
 
-m = MovieCleaner.new(options.base_path, options.verbose, options.resolutions)
-m.print_sub_par_files
+MovieCleaner.new(options.base_path, options.verbose, options.resolutions).print_sub_par_files
