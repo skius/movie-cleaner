@@ -9,23 +9,13 @@ Removes media files where there already is a higher resolution
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'movie_cleaner'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install movie_cleaner
 
 ## Usage
 
-`movie_cleaner [options]` 
+```
+$ movie_cleaner [options]
+```
 
 | option | description | example |
 |-|-| - |
