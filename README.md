@@ -24,6 +24,33 @@ $ movie_cleaner [options]
 |`-d,--directory DIRECTORY`| Directory which contains all other movie folders | `-d /home/user/media/movies` |
 |`-r,--resolutions res1,res2`| Comma-separated list of resolutions in order of priority | `-r 1080p,720p` |
 
+## Example
+
+Run `movie_cleaner` for `/home/user/Media/Movies` with 2160p being the highest quality we want and 720p being the lowest.
+`-v` means we run it in verbose mode.
+
+```
+$ movie_cleaner -d /home/user/Media/Movies -v -r 2160p,1080p,720p
+Found sub-par files for movie 'Movie 1 (2018)':
+rm '/home/user/Media/Movies/Movie 1 (2018)/Movie 1 (2018) WEBDL-720p.mkv'
+
+Found sub-par files for movie 'Movie 2 (2018)':
+rm '/home/user/Media/Movies/Movie 2 (2018)/Movie 2 (2018) WEBDL-720p.mkv'
+
+Found sub-par files for movie 'Movie 3 (2017)':
+rm '/home/user/Media/Movies/Movie 3 (2017)/Movie 3 (2017) Bluray-1080p.mkv'
+```
+
+Do the same, but in non-verbose mode. Output to `rm.sh`, chmod and execute to remove:
+
+```
+$ movie_cleaner -d /home/user/Media/Movies -r 2160p,1080p,720p > rm.sh
+rm '/home/user/Media/Movies/Movie 1 (2018)/Movie 1 (2018) WEBDL-720p.mkv'
+rm '/home/user/Media/Movies/Movie 2 (2018)/Movie 2 (2018) WEBDL-720p.mkv'
+rm '/home/user/Media/Movies/Movie 3 (2017)/Movie 3 (2017) Bluray-1080p.mkv'
+$ chmod +x rm.sh
+$ ./rm.sh
+```
 
 ## Development
 
